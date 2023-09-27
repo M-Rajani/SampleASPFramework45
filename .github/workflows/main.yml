@@ -1,4 +1,4 @@
-name: CI build
+name: publish
 
 on:
  push:
@@ -9,11 +9,23 @@ permissions:
  contents: read
 
 jobs:
- build:
+ publish :
   runs-on: windows-latest
 
   steps:
-   - name: checkout
-     uses: actions/checkout@v3
-   - name: Build Docker image
-     run: docker build -t my-docker-image . 
+   - name: setuup .net
+     uses: actions/setuop-dotnet@v3
+     with: 
+      dotnet-version: '6.0.x'
+
+   - name: Restore 
+     run: dotnet restore ./SampleASPFramework45.sln
+   - name: Build
+     run: dotnet build ./SampleASPFramework45.sln --configuration Release --no-restore
+
+   - name: publish
+     run: dotnet publish ./SampleASPFramework45.sln --configuration Release --no-build
+
+     
+       
+     
