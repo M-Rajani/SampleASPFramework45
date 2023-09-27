@@ -16,7 +16,7 @@ jobs:
    - name: setup .net
      uses: actions/setup-dotnet@v3
      with: 
-      dotnet-version: '4.5.x'
+      dotnet-version: '4.5'
 
    - name: Restore 
      run: nuget restore SampleASPFramework45.sln
