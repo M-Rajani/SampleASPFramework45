@@ -19,9 +19,9 @@ jobs:
       dotnet-version: '6.0.x'
 
    - name: Restore 
-     run: dotnet restore ./SampleASPFramework45.sln
+     run: dotnet restore SampleASPFramework45.sln
    - name: Build
-     run: dotnet build ./SampleASPFramework45.sln --configuration Release --no-restore
+     run: dotnet build SampleASPFramework45.sln --configuration Release --no-restore
 
    - name: publish
      run: dotnet publish ./SampleASPFramework45.sln --configuration Release --no-build
