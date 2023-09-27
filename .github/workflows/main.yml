@@ -19,7 +19,7 @@ jobs:
       dotnet-version: '6.0.x'
 
    - name: Restore 
-     run: nuget restore SampleASPFramework45.sln
+     run: nuget restore
    - name: Build
      run: msbuild SampleASPFramework45.sln --configuration Release --no-restore
 
